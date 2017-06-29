@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Test</title>
 </head>
 <body>
-<h1>{{data}}</h1>
+<h3><a href="{%url 'blog:add_article'%}">new articles</a></h3>
+{% for article in articles%}
+    <a href="{%url 'blog:article_page' article.id%}">{{article.title}}</a>
+    <br/>
+{% endfor %}
 </body>
 </html>

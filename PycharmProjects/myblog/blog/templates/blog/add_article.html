@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add article</title>
+</head>
+<body>
+    <form action="{% url 'blog:add_action'%}" method="post">
+        {%csrf_token%}
+        <lable>title:
+            <input name="title" type="text"/>
+        </lable>
+        <br/>
+        <lable>content:
+            <input name="content" type="text"/>
+        </lable>
+        <br/>
+        <input type="submit" value="submit"/>
+    </form>
+    <a href="{%url 'blog:index'%}">come back home</a>
+</body>
+</html>

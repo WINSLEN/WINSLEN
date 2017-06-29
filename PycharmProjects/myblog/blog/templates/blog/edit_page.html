@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit page</title>
+</head>
+<body>
+    <form action="{% url 'blog:edit_action' article.id%}" method="post">
+        {%csrf_token%}
+        <lable>title:
+            <input name="title" type="text" value="{{article.title}}"/>
+        </lable>
+        <br/>
+        <lable>content:
+            <input name="content" type="text" value="{{article.content}}"/>
+        </lable>
+        <br/>
+        <input type="submit" value="submit"/>
+    </form>
+    <a href="{%url 'blog:index'%}">come back home</a>
+</body>
+</html>
